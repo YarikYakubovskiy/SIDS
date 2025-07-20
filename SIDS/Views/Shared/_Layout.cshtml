@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/main.css?v=5">
+    <link rel="icon" type="image/x-icon" href="~/images/ZAT.png">
+</head>
+<body>
+    <header>
+        <a href="/"><img src="~/images/ZAT.png" alt="Логотип солнца"></a>
+        <h1>SECURE. INVESTIGATE. DELAY. SAVE.</h1>
+    </header>
+
+    <nav>
+        <a href="/Anomalies">Аномалии</a>
+        <a href="">Зоны</a>
+        <a href="">Оперативные группы</a>
+        <a href="">Доп.инфа</a>
+        <a href="">Технологии SIDS</a>
+        <a href="">Организации</a>
+    </nav>
+
+    <div class="main-content">
+        @RenderBody()
+    </div>
+
+    <footer>
+        © 2025 Организация SIDS. Все права защищены.
+    </footer>
+</body>
+</html>
