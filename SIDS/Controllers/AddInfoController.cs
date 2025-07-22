@@ -4,16 +4,16 @@ namespace SIDS.Controllers;
 
 [Route("[controller]")]
 [ApiController]
-public class AnomaliesController : Controller
+public class AddInfoController : Controller
 {
     [HttpGet("")]
-    public IActionResult Anomalies()
+    public IActionResult AddInfo()
     {
         return View();
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetAnomaly(int id)
+    public IActionResult GetInfo(int id)
     {
         return View($"{id}");
     }
