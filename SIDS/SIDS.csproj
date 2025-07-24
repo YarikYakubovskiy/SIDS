@@ -12,9 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Technologies\" />
-    <Folder Include="Views\Groups\" />
     <Folder Include="Views\AddInfo\" />
+    <Folder Include="Views\Organizations\" />
   </ItemGroup>
 
 </Project>
