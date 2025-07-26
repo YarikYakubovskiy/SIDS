@@ -13,7 +13,7 @@ public class AddInfoController : Controller
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetInfo(int id)
+    public IActionResult GetInfo(string id)
     {
         return View($"{id}");
     }

@@ -13,8 +13,8 @@ public class OrganizationsController : Controller
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetOrganization(int id)
+    public IActionResult GetOrganization(string id)
     {
-        return View($"{id}");
+        return View(id);
     }
 }

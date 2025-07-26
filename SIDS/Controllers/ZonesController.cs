@@ -13,8 +13,8 @@ public class ZonesController : Controller
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetZone(int id)
+    public IActionResult GetZone(string id)
     {
-        return View($"{id}");
+        return View(id);
     }
 }

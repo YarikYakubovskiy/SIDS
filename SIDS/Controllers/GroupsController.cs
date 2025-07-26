@@ -13,8 +13,8 @@ public class GroupsController : Controller
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetGroup(int id)
+    public IActionResult GetGroup(string id)
     {
-        return View($"{id}");
+        return View(id);
     }
 }

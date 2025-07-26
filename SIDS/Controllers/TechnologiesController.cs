@@ -13,8 +13,8 @@ public class TechnologiesController : Controller
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetTechnology(int id)
+    public IActionResult GetTechnology(string id)
     {
-        return View($"{id}");
+        return View(id);
     }
 }

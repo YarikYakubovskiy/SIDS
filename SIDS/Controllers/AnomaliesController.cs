@@ -13,8 +13,8 @@ public class AnomaliesController : Controller
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetAnomaly(int id)
+    public IActionResult GetAnomaly(string id)
     {
-        return View($"{id}");
+        return View(id);
     }
 }
