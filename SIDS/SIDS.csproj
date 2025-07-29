@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Views\AddInfo\" />
-    <Folder Include="Views\Organizations\" />
   </ItemGroup>
 
 </Project>
