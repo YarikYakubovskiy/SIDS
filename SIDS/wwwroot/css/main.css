@@ -86,7 +86,7 @@ h2 {
     color: #b30000;
 }
 
-..anomaly-list {
+.anomaly-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -215,6 +215,34 @@ h2 {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+.dialogue-block {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #ccc;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+    .dialogue-block p {
+        margin-bottom: 10px;
+    }
+
+    .dialogue-block em {
+        color: #666;
+        font-style: italic;
+    }
 
 
 
