@@ -248,4 +248,21 @@ h2 {
 
 
 
+.object-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.back-button,
+.next-button {
+    background-color: #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+}
 
+    .back-button:hover,
+    .next-button:hover {
+        background-color: #555;
