@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/main.css?v=20">
+    <link rel="icon" type="image/x-icon" href="~/images/SIDS.png">
+</head>
+
+
+<header2>
+    <a href="/"><img src="~/images/arxiv2.png" alt="Логотип arxiv2"></a>
+        
+        
+   
+</header2>
+
+<nav>
+    <a href="/Anomalies">Аномалии</a>
+    <a href="/Zones">Зоны</a>
+    <a href="/Groups">Оперативные группы</a>
+    <a href="/AddInfo">Доп.инфа</a>
+    <a href="/Technologies">Технологии SIDS</a>
+    <a href="/Organizations">Организации</a>
+</nav>
+
+<div class="main-content">
+    @RenderBody()
+</div> 
+<footer>
+    © 2025 Организация SIDS. Все права защищены.
+</footer>
+
+</html>
