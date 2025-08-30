@@ -288,7 +288,7 @@ h2 {
 .image-block {
     float: left;
     margin-right: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     padding:0;
     max-width: 300px;
 }
@@ -297,6 +297,19 @@ h2 {
     width: 100%;
     border: 3px solid #000;
 }
+
+.image-block2 {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    padding: 0;
+    max-width: 100%;
+}
+
+    .image-block2 img {
+        width: 100%;
+        border: 3px solid #000;
+    }
 
 .highlight {
     background-color: #ffe0b2;
@@ -316,7 +329,7 @@ h2 {
 
 
 .footer-bar {
-    margin-top: 376px;
+    margin-top: 600px;
     padding: 15px;
     background-color: #444;
     color: black;
@@ -327,7 +340,7 @@ h2 {
 }
 
 .footer-bar-second {
-    margin-top: 376px;
+    margin-top: 500px;
     padding: 15px;
     background-color: #ffe0b2;
     color: black;
