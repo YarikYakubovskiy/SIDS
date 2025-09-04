@@ -397,6 +397,7 @@ h2 {
     border-left: 4px solid #ccc;
     font-size: 16px;
     line-height: 1.5;
+
 }
 
     .dialogue-block p {
@@ -408,7 +409,9 @@ h2 {
         font-style: italic;
     }
 
-
+    .dialogue-block p:empty {
+      .content { display: none; } 
+    }
 
 
 
@@ -427,4 +430,26 @@ h2 {
     text-decoration: none;
 }
 
+#more {
+    display: none;
+}
+
+.dialogue p {
+    margin: 6px 0;
+}
+
+
+
+
+
+.dialogue .note {
+    margin-top: 10px;
+    padding: 6px 10px;
+    background: #898989;
+    border-left: 4px solid #444;
+    font-size: 0.95em;
+    color: #2;
+}
+
+надо только.note
 
