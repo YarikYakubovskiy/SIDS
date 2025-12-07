@@ -9,6 +9,7 @@
   <ItemGroup>
     <Content Remove="Views\AddInfo\KLAO.cshtml" />
     <Content Remove="Views\Anomalies\3.cshtml" />
+    <Content Remove="Views\Anomalies\890.cshtml" />
     <Content Remove="Views\Anomalies\990.cshtml" />
     <Content Remove="Views\Anomalies\██.cshtml" />
   </ItemGroup>
@@ -25,6 +26,7 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Views\AddInfo\KLAO.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Anomalies\3.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Anomalies\890.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Anomalies\990.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Anomalies\██.cshtml" />
   </ItemGroup>
@@ -32,6 +34,7 @@
   <ItemGroup>
     <None Include="Views\AddInfo\KLAO.cshtml" />
     <None Include="Views\Anomalies\3.cshtml" />
+    <None Include="Views\Anomalies\890.cshtml" />
     <None Include="Views\Anomalies\990.cshtml" />
     <None Include="Views\Anomalies\██.cshtml" />
   </ItemGroup>
@@ -46,6 +49,10 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\AddInfo\KLAO.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Anomalies\890.cshtml" />
   </ItemGroup>
 
 </Project>
