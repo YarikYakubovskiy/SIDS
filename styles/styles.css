@@ -1,0 +1,71 @@
+body {
+    background: #222;
+    margin: 0;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+}
+.document {
+    background: #fff;
+    margin: 0 auto;
+    width: 900px;
+    min-height: 1200px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.45);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.header, .footer {
+    background: #8eb1d1;
+    padding: 25px 40px;
+    position: relative;
+}
+.header {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 2px solid #222;
+}
+.sun {
+    width: 110px;
+    height: 110px;
+    background: url('../images/ZAT.png') no-repeat center/contain;
+    margin-right: 40px;
+    flex-shrink: 0;
+}
+.header-text {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #222;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+.content {
+    padding: 35px 40px 35px 40px;
+    font-size: 1.15em;
+    color: #222;
+    line-height: 1.6;
+}
+.content b {
+    font-weight: bold;
+}
+.footer {
+    border-top: 2px solid #222;
+    text-align: left;
+}
+.footer-title {
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.footer-class {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.footer-ability {
+    font-size: 1.15em;
+    margin-top: 7px;
+}
+@media (max-width: 950px) {
+    .document { width: 98vw; }
+    .header, .footer, .content { padding: 15px 5vw; }
+}

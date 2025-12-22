@@ -3,45 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/css/main.css?v=48">
+
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/css/main.css?v=57">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="~/images/SIDS.png">
 </head>
 
+<body>
 
-<header>
-    
-    <a href="/"><img src="~/images/SIDS.png" alt="Логотип SIDS"></a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-link">
+                <img src="~/images/SIDS9292929292.png" alt="Логотип SIDS">
+            </a>
 
-
-            
-        <div>
-            <h1>
-                SECURE. INVESTIGATE. DELAY. SAVE.
-            </h1>
-            <h1>
-                Мы видим то-что вам не суждено
-            </h1>
-            <p>
-                ~Джордж Смилерс ,гл.КЛАО
-            </p>
+            <div class="titles">
+                <h1>SECURE • INVESTIGATE • DELAY • SAVE</h1>
+                <h2>Мы видим то, что вам не суждено</h2>
+                <p>— Джордж Смилерс, гл. КЛАО</p>
+            </div>
         </div>
     </header>
 
-    <nav>
+    <nav class="site-nav">
         <a href="/Anomalies">Аномалии</a>
         <a href="/Zones">Зоны</a>
-   
-        <a href="/AddInfo">Доп.инфа</a>
-        <a href="/Technologies">Технологии SIDS</a>
+        <a href="/AddInfo">Доп. инфа</a>
+        <a href="/Technologies">Технологии</a>
         <a href="/Organizations">Организации</a>
     </nav>
 
-    <div class="main-content">
+    <main class="main-content">
         @RenderBody()
-    </div>
+    </main>
 
-    <footer>
-        © 2025 Организация SIDS. Все права защищены.
+    <footer class="site-footer">
+        © 2025 Организация SIDS
     </footer>
 
+</body>
 </html>
