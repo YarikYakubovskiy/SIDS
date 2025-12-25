@@ -220,56 +220,76 @@ h3 {
 }
 
 
+.main-list h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: #b30000;
+}
 
-
-.anomaly-list {
-    display: flex;
-    flex-direction: column;
+.anomaly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 15px;
-    margin-top: 20px;
+    padding: 0 10px;
 }
 
-.anomaly-item {
+.anomaly-card {
     display: flex;
-    align-items: center;
-    background: #e6dfdf;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    align-items: flex-start;
+    background: #0e0e0e;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 12px 15px;
     text-decoration: none;
-    color: black;
-    transition: background 0.2s;
-    font-size: 18px;
-    margin-top: 10px;
+    color: #e0e0e0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Внутренняя тень */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.7), 0 5px 15px rgba(0,0,0,0.6); /* Тень снизу */
 }
 
-.anomaly-item:hover {
-    background: #f0f0f0;
-}
+
+    .anomaly-card:hover {
+        transform: scale(1.02);
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.7), 0 5px 20px rgba(255, 215, 0, 0.4); /* Подсветка снизу при hover */
+    }
 
 .anomaly-dot {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 12px;
+    margin-top: 6px;
     flex-shrink: 0;
 }
 
-.anomaly-dot.red {
-    background-color: #e63946;
-}
+    .anomaly-dot.green {
+        background: #4caf50;
+    }
 
-.anomaly-dot.yellow {
-    background-color: #f1c40f;
-}
+    .anomaly-dot.yellow {
+        background: #ffeb3b;
+    }
 
-.anomaly-dot.green {
-    background-color: #2ecc71;
-}
+    .anomaly-dot.red {
+        background: #f44336;
+    }
 
     .anomaly-dot.blue {
-        background-color: #3498db;
+        background: #2196f3;
     }
+
+.anomaly-info strong {
+    display: block;
+    font-size: 1.05em;
+    margin-bottom: 4px;
+}
+
+.anomaly-info p {
+    font-size: 0.9em;
+    color: #cccccc;
+    margin: 0;
+}
 
 .archieved-message {
     box-sizing: border-box;
@@ -338,15 +358,7 @@ h3 {
    
     
 }
-.main-anomaly2 {
-    padding: 10px;
-    max-width: 1000px;
-    margin: auto;
-    background-color: #475e51;
-    border-radius: 20px;
-    box-shadow: 0 px 20px rgba(0,0,0,0.1);
-}
-    
+
 
 h2 {
     color: #cc0000;
@@ -411,13 +423,6 @@ h2 {
     font-weight: bold;
 }
 
-.highlight2 {
-    background-color: rgba(0,0,0,0.1);
-    padding: 10px;
-    border-left: 5px solid #666666eb;
-    margin: 20px 0;
-    font-weight: bold;
-}
 
 
 .footer-bar {
@@ -442,38 +447,6 @@ h2 {
     border-top: 3px solid black;
 }
 
-.footer-bar-second2 {
-    margin-top: 376px;
-    padding: 15px;
-    background-color: #032a14;
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    border-top: 3px solid black;
-}
-
-.footer-bar3 {
-    margin-top: 600px;
-    padding: 15px;
-    background-color: #bdd0cf;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    border-top: 3px solid black;
-}
-
-.footer-bar-second3 {
-    margin-top: 376px;
-    padding: 15px;
-    background-color: #bdd0cf;
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    border-top: 3px solid black;
-}
 
 
 .back-button:hover {
@@ -647,67 +620,66 @@ footer {
     border-top: 1px solid #333;
     flex-shrink: 0;
 }
-@media (max-width: 768px) {
 
-    html, body {
-        margin: 0;
-        padding: 0;
-        min-height: 100%;
-        background-color: #000; /* или нужный фон */
-        overflow-x: hidden; /* убирает боковой скролл */
-    }
 
-    header {
-        padding: 16px;
-    }
 
-    .header-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
+.scp-warning {
+    border: 1px solid #7a0000;
+    background: rgba(120, 0, 0, 0.15);
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
 
-    header img {
-        width: 80px !important;
-        height: 80px !important;
-        margin: 0;
-    }
+.scp-card {
+    border: 1px solid #2f2f2f;
+    background: #0e0e0e;
+    padding: 20px;
+}
 
-    header h1 {
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
 
-    header h2 {
-        font-size: 12px;
-    }
 
-    header p {
-        font-size: 11px;
-    }
 
-    /* Навигация — не вылазит за экран */
-    nav {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-        background-color: #0d0d0d;
-    }
+/* Основные настройки страницы */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
-        nav a {
-            flex: 0 0 auto;
-            font-size: 13px;
-            padding: 12px 14px;
-        }
+.container {
+    display: flex;
+    height: 30vh;
+    position: relative;
+}
 
-    .main-content {
-        padding: 20px 16px;
-    }
+/* Колонки */
+.column {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание текста по левому краю внутри колонки */
+}
 
-    footer {
-        text-align: center;
-        padding: 12px;
-        font-size: 11px;
-    }
+/* Заголовки */
+h5 {
+    color: #b30000; /* Красный цвет */
+    font-family: Arial, sans-serif;
+    font-size: 3.5rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center; /* Заголовки центрированы относительно своих колонок */
+}
+
+.divider {
+    width: 3px;
+    background-color: #000;
+    height: 90%;
+    align-self: center;
+}
+
+.content p {
+    margin: 5px 0;
 }
