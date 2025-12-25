@@ -1,9 +1,9 @@
-/* Scoped styles for the embedded SIDS page - avoid conflicts with main.css */
+
 .sids-embedded * {
     box-sizing: border-box;
 }
 
-/* SIDS RESET (только внутри контейнера) */
+
 .sids-embedded .SIDS-site-header,
 .sids-embedded header,
 .sids-embedded nav,
@@ -13,7 +13,7 @@
     padding: 0;
 }
 
-/* SIDS GLOBAL */
+
 .sids-embedded {
     font-family: "Segoe UI", Tahoma, Arial, sans-serif;
     background-color: #0b0b0b;
@@ -21,7 +21,7 @@
     line-height: 1.6;
 }
 
-/* SIDS HEADER */
+
 .sids-embedded .SIDS-site-header {
     background: linear-gradient(180deg, #1e1e1e 0%, #0a0a0a 100%);
     border-bottom: 2px solid #8b0000;
@@ -176,3 +176,17 @@ html, body {
     border-radius: 8px;
     text-decoration: none;
 }
+
+
+.image-block {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    padding: 0;
+    max-width: 300px;
+}
+
+    .image-block img {
+        width: 100%;
+        border: 3px solid #000;
+    }
