@@ -1,0 +1,178 @@
+/* Scoped styles for the embedded SIDS page - avoid conflicts with main.css */
+.sids-embedded * {
+    box-sizing: border-box;
+}
+
+/* SIDS RESET (только внутри контейнера) */
+.sids-embedded .SIDS-site-header,
+.sids-embedded header,
+.sids-embedded nav,
+.sids-embedded main,
+.sids-embedded footer {
+    margin: 0;
+    padding: 0;
+}
+
+/* SIDS GLOBAL */
+.sids-embedded {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background-color: #0b0b0b;
+    color: #d0d0d0;
+    line-height: 1.6;
+}
+
+/* SIDS HEADER */
+.sids-embedded .SIDS-site-header {
+    background: linear-gradient(180deg, #1e1e1e 0%, #0a0a0a 100%);
+    border-bottom: 2px solid #8b0000;
+}
+
+.sids-embedded .SIDS-header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.sids-embedded .SIDS-logo img {
+    width: 80px;
+    filter: grayscale(100%) contrast(120%);
+}
+
+.sids-embedded .SIDS-titles h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #cfcfcf;
+}
+
+.sids-embedded .SIDS-titles h2 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #9a9a9a;
+    margin-top: 4px;
+}
+
+.sids-embedded .SIDS-titles p {
+    font-size: 12px;
+    color: #6f6f6f;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* NAVIGATION */
+.sids-embedded .SIDS-site-nav {
+    background-color: #111;
+    border-bottom: 1px solid #333;
+}
+
+.sids-embedded .SIDS-nav-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+.sids-embedded .SIDS-nav-inner a {
+    padding: 12px 20px;
+    color: #c0c0c0;
+    text-decoration: none;
+    font-size: 14px;
+    border-right: 1px solid #222;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sids-embedded .SIDS-nav-inner a:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+/* MAIN */
+.sids-embedded .SIDS-main-content {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #0f0f0f;
+    border: 1px solid #222;
+}
+
+.sids-embedded .SIDS-main-content h1,
+.sids-embedded .SIDS-main-content h2,
+.sids-embedded .SIDS-main-content h3 {
+    color: #dcdcdc;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+}
+
+.sids-embedded .SIDS-main-content p {
+    margin-bottom: 14px;
+    font-size: 15px;
+}
+
+.sids-embedded .SIDS-document {
+    background-color: #121212;
+    border-left: 4px solid #8b0000;
+    padding: 15px;
+    margin: 20px 0;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+}
+
+/* FOOTER */
+.sids-embedded .SIDS-site-footer {
+    background-color: #080808;
+    border-top: 1px solid #222;
+    color: #666;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+}
+
+
+/* MOBILE (scoped) */
+@media (max-width: 768px) {
+    .sids-embedded .SIDS-header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sids-embedded .SIDS-nav-inner {
+        flex-direction: column;
+    }
+
+    .sids-embedded .SIDS-nav-inner a {
+        border-right: none;
+        border-bottom: 1px solid #222;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: #0b0b0b; /* убираем белый фон НАВСЕГДА */
+}
+
+.highlightSCPP2PP {
+    background-color: #0a0a0a;
+    padding: 10px;
+    border-left: 5px solid #8b0000;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.nav-buttons4444 {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+.nav-buttons .back-button,
+.nav-buttons .next-button {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+}
