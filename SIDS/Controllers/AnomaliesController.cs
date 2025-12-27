@@ -17,4 +17,4 @@ public class AnomaliesController : Controller
     {
         return View(id);
     }
-}
+
