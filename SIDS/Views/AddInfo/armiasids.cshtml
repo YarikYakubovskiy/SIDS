@@ -316,8 +316,6 @@
 
     </p>
 
-
-
     <div class="image-block">
 
         <img src="~/images/adam pateyan.png" alt=адамыпаиейан>
@@ -326,7 +324,65 @@
 
     </div>
 
+    <p>
+        Адам Патейан: 03.18.1958 г советники отправили приказ министретсву обороны SIDS создать реигональный корпус в районах Ближнего Востока и в Центральной Азии . Их штаб база находиться в Узбекистане ,зоне-222 на поверности военного отдела 3-4.Изначально,зона-222  была под название участок-222 военоого предозначения,но в 09.03.1967 году советники ,в частности советник-7 который специализируется на проверке безопасности территориальности SIDS и благоплочия человечества приказали участок-222 создать в полноценную зону. В итоге зона-222 получа огромный бюджет и в 2000 году стала  гигазоной. 
+    </p>
 
+    <p>
+        Как обычно по протоколу региональные корпуса одеваются по камуфляжу страны где они на данный момент находятся. Количество людей в Адам Патейан около 28.294 чел.
+    </p>
+
+    <div class="experiment">
+        <div class="experiment">
+            <button onclick="toggleExperiment(this)">Индицент 14.09.24 г</button>
+
+            <div class="dialogue-block content">
+                <div class="dialogue">
+                    <p></p>
+                    <p><strong>Местоположения инцидента Киргизия:</strong>.14.09.24 г группа Адам патейан-131 на вертолёте ми-26 перевазила контейнер с Т-1.И за дейсвтия расколотой воли которая произвела прорыв  с помощью деверсий красной звезды. Расколотая воля ,да бы получить Т-1 подорвала Ми-26,зная что у SIDS для  таких вещей предозначены специальные контейнеры,но и за кризиса  где они делались(Европа) они не смогли сделать это.</p>
+                   
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <p>
+После этого  SIDS укрепила ближний восток и центральную азию . Были   улучшеные развед отряды на границах Расколотой Воли.Инцидент показал насколько  корупция в СНГ влияет на безопаность SIDS. Поэтому в 2025 году началась  12 
+    </p>
+
+
+
+
+
+    <p>
+
+        <main>
+
+
+
+            <h2>Корпус:Добивальщики</h2>
+
+        </main>
+
+    </p>
+
+    <div class="image-block">
+
+        <img src="~/images/Imblema dobiivalciki.png" alt=200>
+
+        <p style="text-align: center;">  </p>
+
+    </div>
+
+    <p>
+
+
+    <p>
+        Добивальщики: в 2003 году началаст иракская война.
+    </p>
 
 
 
@@ -392,3 +448,43 @@
 </div>
 
 
+
+
+<script>
+    // Скрыть содержимое экспериментов при загрузке и сохранить исходные подписи кнопок
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.main-anomaly .experiment .content').forEach(function (c) {
+            c.style.display = 'none';
+        });
+
+        document.querySelectorAll('.main-anomaly .experiment button').forEach(function (btn) {
+            // сохраняем оригинальный текст в data-original-text, если ещё не задано
+            if (!btn.dataset.originalText) {
+                btn.dataset.originalText = btn.textContent.trim();
+            }
+        });
+    });
+
+    function toggleExperiment(button) {
+        const container = button.closest('.experiment');
+        if (!container) return;
+
+        const content = container.querySelector('.content');
+        if (!content) return;
+
+        // если ещё не сохраняли оригинальную подпись — сохраним
+        if (!button.dataset.originalText) {
+            button.dataset.originalText = button.textContent.trim();
+        }
+
+        const isHidden = (content.style.display === "none" || content.style.display === "");
+        if (isHidden) {
+            content.style.display = "block";
+            button.textContent = "Скрыть";
+        } else {
+            content.style.display = "none";
+            // восстанавливаем ту подпись, которая была изначально
+            button.textContent = button.dataset.originalText;
+        }
+    }
+</script>

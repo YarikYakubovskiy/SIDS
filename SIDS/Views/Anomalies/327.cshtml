@@ -22,9 +22,8 @@
 
     </p>
     <style>
-  
-        .more { display: none; }
-        .dots { display: inline; }
+        /* Scoped: скрываем содержимое экспериментов по умолчанию */
+        .main-anomaly .experiment .content { display: none; }
     </style>
 
     <div class="experiment">
@@ -78,11 +77,6 @@
                     Все экземпляры ТТ инфицировали как объект-327 KZ-3  записи разговоров НИГ-56 не записались.
                 <p>
                     Разговоры персонала не записались и за удаления архивов зоны-222
-
-
-
-
-
 
                 </p>
             </div>
@@ -158,18 +152,6 @@
                     <p>
                         Объект-327 KZ с 1980 г до нашего времени помещён в специальный второй сундук.Что бы открыть его нужно разрешение директора.  Объект-327 KZ находятся в комнате директора зоны-222
 
-
-
-
-
-
-
-                
-
-
-
-
-
     </div>      
 
     <div class="highlight">
@@ -181,22 +163,45 @@
         <a href="/Anomalies/234" class="next-button">←объект- 234 UK </a>
         <a href="/Anomalies/457" class="next-button">объект-457 CA →</a>
 
-
     </div>
 </div>
 
 
 <script>
+    // Скрыть содержимое экспериментов при загрузке и сохранить исходные подписи кнопок
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.main-anomaly .experiment .content').forEach(function (c) {
+            c.style.display = 'none';
+        });
+
+        document.querySelectorAll('.main-anomaly .experiment button').forEach(function (btn) {
+            // сохраняем оригинальный текст в data-original-text, если ещё не задано
+            if (!btn.dataset.originalText) {
+                btn.dataset.originalText = btn.textContent.trim();
+            }
+        });
+    });
+
     function toggleExperiment(button) {
         const container = button.closest('.experiment');
-        const content = container.querySelector('.content');
+        if (!container) return;
 
-        if (content.style.display === "none" || content.style.display === "") {
+        const content = container.querySelector('.content');
+        if (!content) return;
+
+        // если ещё не сохраняли оригинальную подпись — сохраним
+        if (!button.dataset.originalText) {
+            button.dataset.originalText = button.textContent.trim();
+        }
+
+        const isHidden = (content.style.display === "none" || content.style.display === "");
+        if (isHidden) {
             content.style.display = "block";
             button.textContent = "Скрыть";
         } else {
             content.style.display = "none";
-            button.textContent = "Показать";
+            // восстанавливаем ту подпись, которая была изначально
+            button.textContent = button.dataset.originalText;
         }
     }
 </script>
