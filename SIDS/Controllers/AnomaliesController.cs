@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 namespace SIDS.Controllers;
-
+    
 [Route("[controller]")]
 [ApiController]
 public class AnomaliesController : Controller
@@ -17,4 +17,4 @@ public class AnomaliesController : Controller
     {
         return View(id);
     }
-
+}
