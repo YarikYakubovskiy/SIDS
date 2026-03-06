@@ -1,0 +1,230 @@
+﻿/* Scoped styles для SCP-9000 — применяются только внутри .scp9000 */
+.scp9000 {
+    --bg: #f2f2f2;
+    --paper: #ffffff;
+    --accent: #8b0000;
+    color: #111;
+    font-family: Roboto, sans-serif;
+}
+
+    /* верхняя панель */
+    .scp9000 .topbar {
+        background: linear-gradient(135deg, #2b0000, #7a0000);
+        color: #fff;
+        padding: 15px 25px;
+        text-align: center;
+        border-bottom: 4px solid var(--accent);
+    }
+
+        .scp9000 .topbar h1 {
+            margin: 0;
+            font-family: Orbitron, sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .scp9000 .topbar small {
+            opacity: 0.8;
+        }
+
+    /* контейнер документа */
+    .scp9000 .scp-document {
+        max-width: 900px;
+        background: var(--paper);
+        margin: 40px auto;
+        padding: 30px 40px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.12);
+        box-sizing: border-box;
+    }
+
+    /* классификация */
+    .scp9000 .classified {
+        text-align: center;
+        border-bottom: 3px solid var(--accent);
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+    }
+
+        .scp9000 .classified h2 {
+            margin: 5px 0;
+        }
+
+    .scp9000 .red-line {
+        height: 6px;
+        background: repeating-linear-gradient(to right, var(--accent) 0 20px, transparent 20px 30px);
+        margin: 15px 0;
+    }
+
+    /* инфо блоки */
+    .scp9000 .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .scp9000 .info-box {
+        border: 2px solid var(--accent);
+        padding: 10px 15px;
+    }
+
+        .scp9000 .info-box b {
+            display: block;
+            font-size: 13px;
+            color: var(--accent);
+        }
+
+    /* keter */
+    .scp9000 .keter {
+        background: #f6eaea;
+        border-left: 8px solid var(--accent);
+        padding: 15px;
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+
+    /* изображение — фиксируем max-width и авто масштаб */
+    .scp9000 .scp-image {
+        text-align: center;
+    }
+
+        .scp9000 .scp-image img {
+            width: 100%;
+            max-width: 1000px; /* ограничение ширины изображения */
+            height: auto; /* сохраняет пропорции */
+            object-fit: cover;
+            border: 1px solid #aaa;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .scp9000 .scp-image small {
+            display: block;
+            margin-top: 5px;
+            color: #555;
+        }
+
+    /* секции */
+    .scp9000 .section {
+        margin-top: 30px;
+    }
+
+        .scp9000 .section h3 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+        }
+
+        .scp9000 .section p {
+            line-height: 1.6;
+            text-align: justify;
+            margin: 0 0 15px 0;
+        }
+
+/* адаптив */
+@media (max-width: 720px) {
+    .scp9000 .scp-document {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .scp9000 .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+
+
+
+.scp-nav {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+    .scp-nav a {
+        font-family: Orbitron, sans-serif;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        background: linear-gradient(135deg, #2b0000, #7a0000);
+        border: 2px solid #8b0000;
+        box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+        transition: all 0.25s ease;
+    }
+
+        /* hover */
+        .scp-nav a:hover {
+            background: #8b0000;
+            box-shadow: 0 0 18px rgba(139, 0, 0, 0.9);
+            transform: translateY(-2px);
+        }
+
+        /* активная кнопка */
+        .scp-nav a.active {
+            background: #000;
+            border-color: #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+        }
+
+
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.image-block {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    padding: 0;
+    max-width: 300px;
+}
+
+    .image-block img {
+        width: 100%;
+        border: 3px solid #000;
+    }
+
+
+
+.nav-buttons4444 {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+.nav-buttons .back-button,
+.nav-buttons .next-button {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+
+    #teleport-h1 {
+        cursor: pointer;
+        font-family: 'Exo 2', sans-serif;
+        color: #fff;
+        transition: all 0.2s ease;
+    }
+
+        #teleport-h1:hover {
+            color: #ffaaaa;
+            text-shadow: 0 0 6px #ff0000;
+            transform: translateY(-2px);
+        }
+
