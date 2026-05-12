@@ -750,3 +750,27 @@ h5 {
         line-height: 1.6;
         color: #bdbdbd;
     }
+
+.wrapper89 {
+    margin: 30px;
+}
+
+.box89 {
+    position: relative;
+    background: #cccccc;
+    padding: 12px 16px 12px 28px; /* отступ слева под точку */
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+    /* точка для каждого блока */
+    .box89::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        left: 10px;
+        width: 6px;
+        height: 6px;
+        background: black;
+        border-radius: 50%;
+    }

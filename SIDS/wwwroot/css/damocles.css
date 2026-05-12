@@ -164,10 +164,11 @@
   color: var(--accent);
 }
 .damocles p { line-height: 1.7; margin-bottom: 15px; color: #ced4da; }
-
+    
 /* адаптив */
 @media (max-width: 900px) {
   .damocles .page { grid-template-columns: 1fr; }
   .damocles .sidebar { order: 2; }
   .damocles .hero img { height: 220px; }
 }
+
