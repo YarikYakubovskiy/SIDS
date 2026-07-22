@@ -1,0 +1,253 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>SCP-9340</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    /* ======================================================
+       ПОЛНЫЙ СБРОС — перекрывает любые внешние стили страницы
+       ====================================================== */
+    html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ul, li, table, tr, td, th, img, button {
+        all: revert;
+        box-sizing: border-box !important;
+    }
+
+    html {
+        background: #16181c !important;
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        min-height: 100vh !important;
+        font-family: "Segoe UI", Arial, sans-serif !important;
+        background: #16181c !important;
+        color: #d6d6d6 !important;
+        line-height: 1.6 !important;
+    }
+
+    a { text-decoration: none !important; cursor: pointer !important; }
+    * { box-sizing: border-box; }
+
+    /* ====== ШАПКА ====== */
+    .scp-header {
+        background: radial-gradient(circle at 50% -40%, #23262c 0%, #0c0d10 70%);
+        border-bottom: 1px solid #2a2d33;
+        padding: 28px 20px 18px;
+        text-align: center;
+        position: relative;
+    }
+
+    .scp-account {
+        position: absolute;
+        top: 30px;
+        right: 24px;
+        font-size: 13px;
+        color: #8fa8ff;
+    }
+    .scp-account span { color: #6b6f78; margin: 0 6px; }
+
+    .scp-logo-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .logo-link98 img {
+        height: 90px;
+    }
+
+    .scp-title {
+        font-size: clamp(28px, 6vw, 44px);
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #a9c1ff;
+        margin: 0;
+    }
+
+    .scp-subtitle {
+        font-size: 13px;
+        letter-spacing: 4px;
+        color: #e8e8e8;
+        font-weight: 700;
+        margin-top: 4px;
+    }
+
+    /* ====== НАВИГАЦИЯ ====== */
+    .scp-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2px;
+        margin: 18px auto 0;
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+
+    .scp-nav a {
+        display: inline-block;
+        background: #1c1e24;
+        border: 1px solid #34363d;
+        color: #a9c1ff;
+        font-weight: 700;
+        font-size: clamp(11px, 2vw, 13px);
+        padding: clamp(7px, 1.5vw, 9px) clamp(10px, 3vw, 18px);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background .15s, color .15s;
+    }
+
+    .scp-nav a:hover {
+        background: #a9c1ff;
+        color: #16181c;
+    }
+
+    .breadcrumb {
+        text-align: center;
+        font-size: 14px;
+        margin: 22px 0 6px;
+        color: #7c88a8;
+    }
+    .breadcrumb a { color: #7c9cff; }
+    .breadcrumb strong { color: #d6d6d6; }
+
+    /* ====== КОНТЕЙНЕР СТРАНИЦ ====== */
+    main {
+        max-width: 900px;
+        margin: 28px auto 60px;
+        padding: 0 20px;
+    }
+
+    /* ====== УВЕДОМЛЕНИЕ ====== */
+    .notice-box {
+        border: 1px solid #4a5580;
+        background: #1a1d24;
+        border-radius: 4px;
+        padding: 22px 30px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .notice-box h3 {
+        color: #eaeaea;
+        letter-spacing: 2px;
+        font-size: 16px;
+        margin: 0 0 14px;
+    }
+    .notice-box p { color: #b7bccb; font-size: 14.5px; margin: 0; }
+
+    /* ====== СТАТЬЯ ====== */
+    .article p { margin: 0 0 16px; font-size: 15.5px; }
+    .article strong { color: #eaeaea; }
+    .obj-class {
+        color: #ff8a5c;
+        font-weight: 700;
+    }
+
+    .article hr {
+        border: none;
+        border-top: 1px solid #2a2d33;
+        margin: 26px 0;
+    }
+
+    .strike { text-decoration: line-through; opacity: .6; }
+
+    h2.section-h {
+        text-align: center;
+        color: #ff5c5c;
+        font-size: 22px;
+        margin: 40px 0 20px;
+    }
+
+    /* ====== ФУТЕР ====== */
+    .scp-footer {
+        text-align: center;
+        padding: 22px;
+        font-size: 12.5px;
+        color: #6b6f78;
+        border-top: 1px solid #2a2d33;
+        background: #101114;
+    }
+
+    @@media (max-width: 480px) {
+        .scp-account { display: none; }
+        .breadcrumb { font-size: 12px; }
+    }
+</style>
+
+<link rel="icon" type="image/x-icon" href="~/images/SIDS.png">
+</head>
+<body>
+
+
+<header class="scp-header">
+
+    <div class="scp-account">DATA_LINK: ESTABLISHED | [ USER:Administrator ]</div>
+
+
+    <div class="scp-logo-wrap">
+        <a href="/" class="logo-link98">
+            <img src="~/images/SIDS98.png" alt="SIDS Logo">
+        </a>
+        <h1 class="scp-title">SIDS Organization</h1>
+        <div class="scp-subtitle">SECURE &nbsp;·&nbsp; INVESTIGATE &nbsp;·&nbsp; DELAY &nbsp;·&nbsp; SAVE</div>
+    </div>
+
+    <nav class="scp-nav">
+        <a href="/Anomalies">Аномалии</a>
+        <a href="/AddInfo">Доп.инфа</a>
+        <a href="/Organizations">Организации</a>
+    </nav>
+
+</header>
+
+<div class="breadcrumb" id="crumb">Главная » <strong>SCP-9340</strong></div>
+
+<main>
+
+    <!-- ================= СТРАНИЦА: СТАТЬЯ SCP-9340 ================= -->
+    <section id="page-article">
+
+        <div class="notice-box">
+            <h3>УВЕДОМЛЕНИЕ</h3>
+            <p>Комитет по этике присвоил данному документу ограниченный статус допуска.
+            Материалы были переработаны с целью снижения предотвратимого морального риска.</p>
+        </div>
+
+        <div class="article">
+            <p><strong>Объект №:</strong> SCP-9340</p>
+            <p><strong>Класс объекта:</strong> <span class="obj-class">Кернуннос</span></p>
+            <p><strong>Особые условия содержания:</strong> Все экземпляры SCP-9340 локализованы.
+            Сохранение популяции SCP-9340-2 признано второстепенной задачей.</p>
+
+            <p><strong>Описание:</strong> SCP-9340 представляет собой набор из семи предметов —
+            плоских срезов четырёхмерных фигур, состоящих из вещества, не поддающегося
+            стандартной классификации. Внешне объекты напоминают таблички из тёмного камня,
+            от поверхности которых непрерывно поднимается лёгкий дым. Поверхность каждой
+            таблички покрыта пиктограммами; их прочтение вызывает у персонала выраженную
+            смену мировоззрения необратимого характера. Ответственность за самостоятельное
+            прочтение табличек лежит на сотруднике.</p>
+
+            <p>SCP-9340-2 — разумные гуманоидные существа ростом около двух метров, внешне
+            напоминающие крупных кротовидных млекопитающих, с крайне острыми когтями,
+            способными разрезать камень. Их исходная среда обитания к настоящему моменту
+            уничтожена. <span class="strike">Предполагается</span> существование иных поселений
+            SCP-9340-2 за пределами известной зоны контроля Фонда.</p>
+
+            <hr>
+            <h2 class="section-h">Ход событий</h2>
+            <p>Записи о первичном обнаружении объекта и последующих инцидентах доступны
+            сотрудникам с допуском уровня 2 и выше.</p>
+        </div>
+    </section>
+
+</main>
+
+<div class="scp-footer">SCP Foundation — демонстрационная копия оформления, все объекты вымышлены.</div>
+
+</body>
+</html>

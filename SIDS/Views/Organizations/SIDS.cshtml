@@ -1,88 +1,372 @@
 ﻿@{
     ViewData["Title"] = "SIDS";
 }
-<div class="main-anomaly">
-    <h2>SIDS</h2>
-
-    <div class="image-block">
-        <img src="~/images/SIDS.png" alt=SIDS>
-        <p style="text-align: center;"><strong>SIDS </strong><br>Эмблема SIDS </p>
-    </div>
 
 
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>SIDS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <p class="section-title">Класс опасности: <span style="color:#b30000">В случае войны группировок вероятность выжить мал</span></p>
-    <p>
-        <strong>Смысл организации:</strong> SIDS — международная сверхсекретная организация, занимающаяся выявлением, сдерживанием и исследованием аномальных явлений, объектов и существ, представляющих необъяснимую для человека природу.
+    <style>
+            /* ======================================================
+                   ПОЛНЫЙ СБРОС — перекрывает любые внешние стили страницы
+                   ====================================================== */
+            html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ul, li, table, tr, td, th, img, button {
+                all: revert;
+                box-sizing: border-box !important;
+            }
 
-        SIDS-ЭТо множество мелких и иногда огромных учреждений в разных точках мира со своей армией. У SIDS имеются множества орденов,например адские гончий . Их цель защищать важные лица, захватывать позиции врага, спасать учреждения от краха. У SIDS есть агенты под прикрытием по всему миру ,что позволяет SIDS захватывать объекты.Также у  SIDS есть подпольные армии в Индии,Китае и Индонезии ,ради уничтожения вражеских сил. В такие подпольные армии берут солдат из своих же стран. Их учат   участники   ПА(ПОДПОЛЬНЫЕ АРМИИ).
+            html {
+                background: #16181c !important;
+            }
 
-        Организация действует официально в ряде государств, где имеет доступ к инфраструктуре, правительственным каналам и спецслужбам.
-    </p>
-  <strong>Официальная юрисдикция:</strong>
-    <p>
-        SIDS ведёт деятельность в следующих странах:
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                min-height: 100vh !important;
+                display: flex !important;
+                flex-direction: column !important;
+                font-family: "Segoe UI", Arial, sans-serif !important;
+                font-size: 16px !important;
+                background: #16181c !important;
+                color: #d6d6d6 !important;
+                line-height: 1.6 !important;
+            }
 
-        Nato,евросоюз,  вся южная и северная америка, африка кроме Эритерий, снг пространство и Средиземноморье.
-    <p>
- <strong>2013 год:</strong>
-    <p>
-        Для SIDS 2013 год был ужасным. В 2013 году Индия и Китай заключила между собой пакт о созданий новой   компании расколотая воля.Россия пыталась присоединиться к расколотой волей ,но SIDS с помощью  угрожений смогла отстоять Россию. По 2013-2015 годах в Индии и в Китае стала очень долго шла мелкая война за господство. в 2023 году началась  новая война в Индии за господство  над аномалиями.
+            a {
+                text-decoration: none !important;
+                cursor: pointer !important;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            /* ====== ШАПКА ====== */
+            .scp-header {
+                background: radial-gradient(circle at 50% -40%, #23262c 0%, #0c0d10 70%);
+                border-bottom: 1px solid #2a2d33;
+                padding: 28px 20px 18px;
+                text-align: center;
+                position: relative;
+                flex-shrink: 0;
+            }
+
+            .scp-account {
+                position: absolute;
+                top: 30px;
+                right: 24px;
+                font-size: 13px;
+                color: #8fa8ff;
+            }
+
+                .scp-account span {
+                    color: #6b6f78;
+                    margin: 0 6px;
+                }
+
+            .scp-logo-wrap {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .logo-link98 img {
+                height: 90px;
+            }
+
+            .scp-title {
+                font-size: clamp(28px, 6vw, 44px);
+                font-weight: 800;
+                letter-spacing: 1px;
+                color: #a9c1ff;
+                margin: 0;
+            }
+
+            .scp-subtitle {
+                font-size: 13px;
+                letter-spacing: 4px;
+                color: #e8e8e8;
+                font-weight: 700;
+                margin-top: 4px;
+            }
+
+            /* ====== НАВИГАЦИЯ ====== */
+            .scp-nav {
+                display: flex;
+                justify-content: center;
+                gap: 2px;
+                margin: 18px auto 0;
+                flex-wrap: wrap;
+                padding: 0 10px;
+                flex-shrink: 0;
+            }
+
+                .scp-nav a {
+                    display: inline-block;
+                    background: #1c1e24;
+                    border: 1px solid #34363d;
+                    color: #a9c1ff;
+                    font-weight: 700;
+                    font-size: clamp(11px, 2vw, 13px);
+                    padding: clamp(7px, 1.5vw, 9px) clamp(10px, 3vw, 18px);
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background .15s, color .15s;
+                }
+
+                    .scp-nav a:hover {
+                        background: #a9c1ff;
+                        color: #16181c;
+                    }
+
+            .breadcrumb {
+                text-align: center;
+                font-size: 14px;
+                margin: 22px 0 6px;
+                color: #7c88a8;
+            }
+
+                .breadcrumb a {
+                    color: #7c9cff;
+                }
+
+                .breadcrumb strong {
+                    color: #d6d6d6;
+                }
+
+            /* ====== КОНТЕЙНЕР СТРАНИЦ ====== */
+            main {
+                max-width: 900px;
+                margin: 28px auto 60px;
+                padding: 0 20px;
+                flex: 1 0 auto;
+                width: 100%;
+            }
+
+            /* ====== УВЕДОМЛЕНИЕ / ДИАЛОГ ====== */
+            .notice-box {
+                border: 1px solid #4a5580;
+                background: #1a1d24;
+                border-radius: 4px;
+                padding: 22px 30px;
+                text-align: left;
+                margin-bottom: 30px;
+            }
+
+                .notice-box h3 {
+                    color: #eaeaea;
+                    letter-spacing: 2px;
+                    font-size: 18px;
+                    margin: 0 0 14px;
+                    text-align: center;
+                }
+
+                .notice-box p {
+                    color: #b7bccb;
+                    font-size: 16px;
+                    margin: 0 0 10px;
+                    text-align: left;
+                }
+
+            /* ====== СТАТЬЯ ====== */
+            .article p {
+                margin: 0 0 18px;
+                font-size: 17px;
+            }
+
+            .article strong {
+                color: #eaeaea;
+            }
+
+            .obj-class {
+                color: #ff5c5c;
+                font-weight: 700;
+            }
+
+            /*ff5c5c-красный*/
+
+            /* 2196f3синий*/
+
+            /* ff8a5c-обычный*/
+
+            .article hr {
+                border: none;
+                border-top: 1px solid #2a2d33;
+                margin: 26px 0;
+            }
+
+            .strike {
+                text-decoration: line-through;
+                opacity: .6;
+            }
+
+            h2.section-h {
+                text-align: center;
+                color: #ff5c5c;
+                font-size: 24px;
+                margin: 40px 0 20px;
+            }
+
+            /* ====== ФУТЕР ====== */
+            .scp-footer {
+                text-align: center;
+                padding: 22px;
+                font-size: 14px;
+                color: #6b6f78;
+                border-top: 1px solid #2a2d33;
+                background: #101114;
+                flex-shrink: 0;
+            }
+
+            .image-block {
+                float: left;
+                margin-right: 15px;
+                margin-bottom: 20px;
+                padding: 0;
+                max-width: 300px;
+            }
+
+                .image-block img {
+                    width: 100%;
+                    border: 3px solid #7c9cff;
+                }
+
+            /* ====== БЕЙДЖ УРОВНЯ ДОСТУПА ====== */
+            .access-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 4px 12px;
+                border-radius: 3px;
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                margin-left: 6px;
+                vertical-align: middle;
+            }
+
+                .access-badge::before {
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: currentColor;
+                    flex-shrink: 0;
+                }
+
+            .access-lvl-1 {
+                background: #1f3a1f;
+                color: #7fd67f;
+                border: 1px solid #3a6a3a;
+            }
+
+            .access-lvl-2 {
+                background: #3a3a00;
+                color: #fff09a;
+                border: 1px solid #9a8f00;
+            }
+
+            .access-lvl-3 {
+                background: #402400;
+                color: #ffb266;
+                border: 1px solid #a05a00;
+            }
+
+            .access-lvl-4 {
+                background: #3a0000;
+                color: #ff8a8a;
+                border: 1px solid #8a0000;
+            }
+
+            .access-lvl-5 {
+                background: #080808;
+                color: #ff4d4d;
+                border: 1px solid #500000;
+                box-shadow: 0 0 8px rgba(255, 0, 0, 0.15);
+            }
+
+            @@media (max-width: 480px) {
+                .scp-account {
+                    display: none;
+                }
+
+                .breadcrumb {
+                    font-size: 12px;
+                }
+            }
+    </style>
+
+    <link rel="icon" type="image/x-icon" href="~/images/SIDS.png">
+</head>
+<body>
 
 
+    <header class="scp-header">
+
+        <div class="scp-account">DATA_LINK: ESTABLISHED | [ USER:Administrator ]</div>
+
+        <div class="scp-logo-wrap">
+            <a href="/" class="logo-link98">
+                <img src="~/images/SIDS98.png" alt="SIDS Logo">
+            </a>
+            <h1 class="scp-title">SIDS Organization</h1>
+            <div class="scp-subtitle">SECURE &nbsp;·&nbsp; INVESTIGATE &nbsp;·&nbsp; DELAY &nbsp;·&nbsp; SAVE</div>
+        </div>
+
+        <nav class="scp-nav">
+            <a href="/Anomalies">Аномалии</a>
+            <a href="/AddInfo">Доп.инфа</a>
+            <a href="/Organizations">Организации</a>
+        </nav>
+
+    </header>
 
 
+    <main>
 
+        <section id="page-article">
 
-    <p>
-  <strong>Определение слов в названии:</strong>
-    <p>
-    <p>
-        SECURE (Обезопасить):
-        Обнаружить аномалию и захватить её не дав другим взять быстрее,или выслать находку в интернет
-    <p>
-        INVESTIGATE (Исследовать):
-        Проводить тщательные  исследования аномалии в любых условиях,даже когда это опасно учреждению.
-    <p>ц вф        Сдерживать от народа аномалии и их физических либо ментальных сил.
-    <p>
-        SAVE (Спасти):
-        Максимально обеспечить выживание гражданского населения.
-    <p>
- <strong> Создание организации:</strong>
-    <p>
-        Дата: 1917 год Место: Восточный фронт, район обороны Российской империи Во время артиллерийской перестрелки между армиями Российской и Венгерской империй вся российская боевая группа в указанной зоне исчезла. После отправки разведывательных групп обеих сторон не было обнаружено ни следов боя, ни тел, ни следов сражени. После октябрьской революции в 1920 Ленин подал указ на создания SIDS.В 1945 году Адская длань(американская компания по нахождению аномалий) и немецкая компания  Abteilung XXV . Вы итоге  SIDS смогла завладеть  новыми силами(Первое название комитет аномалии(1920-1937)старое название ОРЗС(1937-1950))
+            <div class="article">
+                <p><strong>Класс опасности:</strong> <span class="access-badge access-lvl-5">В случае войны группировок вероятность выжить мал</span></p>
 
+                <div class="image-block">
+                    <img src="~/images/SIDS.png" alt="SIDS">
+                    <p style="text-align: center;"><strong>SIDS</strong><br>Эмблема SIDS </p>
+                </div>
 
-        <strong></strong>
-    </p>
- <strong>Отношения фракций:</strong>
-    <p>
-        <strong>Расколотая воля: </strong>  отношение с SIDS очень враждебное .В 2013 году Российская Федерация пыталась присеодинится к расколотой воле,но SIDS смогла остоять Россию с помощью перемерия .В 20 года отношения очень ухудшилось и начались регулярный стычки с отрядами обеих фракций
-    <p>
-        <strong>Российская Федерация:</strong> Раньше до 2013 года отношения с РФ были хорошие, но после этого в политике фракций ухудшились. К 2025 года остаётся дрюжелюбными, но разногласий и недовольство решениям РФ и подрыв выполнения обязанностей SIDS и возможное финансирование и помощь военной и живой силой расколотой воле. При полном доказательстве о не официальном разглашения договора 2013 года.SIDS обязана ввести допл.войска и начать окупирование власти с помощью своих сил и восставших частей РФ. В случае проигрыша SIDS обязана ввести в зоны черезвучайную ситуацию и начать собирать солдат. Дальше событии идут по приказам советников
-    <p>
-        <strong>США:</strong>  Отношения с США дружелюбные. Нет никакого смысла гадать что США предаст SIDS в связи тем, что SIDS стала для США не только как организация, а как уже ведущий науку США.
-    <p>
-        <strong> Китайская Народная Республика:</strong>  Очень враждебно. Регулярно происходят военные стычки со КНР. Во случае продвижение сил КРН, Индии и расколотой волей. SIDS обязана начать войну любых масштабов, даже ядерная война.
-    <p>
+                <p><strong>Смысл организации:</strong> SIDS — международная сверхсекретная организация, занимающаяся выявлением, сдерживанием и исследованием аномальных явлений, объектов и существ, представляющих необъяснимую для человека природу. SIDS-ЭТо множество мелких и иногда огромных учреждений в разных точках мира со своей армией. У SIDS имеются множества орденов,например адские гончий . Их цель защищать важные лица, захватывать позиции врага, спасать учреждения от краха. У SIDS есть агенты под прикрытием по всему миру ,что позволяет SIDS захватывать объекты.Также у SIDS есть подпольные армии в Индии,Китае и Индонезии ,ради уничтожения вражеских сил. В такие подпольные армии берут солдат из своих же стран. Их учат участники ПА(ПОДПОЛЬНЫЕ АРМИИ). Организация действует официально в ряде государств, где имеет доступ к инфраструктуре, правительственным каналам и спецслужбам.
+                    <p>
+                        <strong>Определение слов в названии:</strong>SECURE (Обезопасить): Обнаружить аномалию и захватить её не дав другим взять быстрее,или выслать находку в интернет
 
-    <p>
-        <strong> Церковь семи углов:</strong>   Нейтрально. Учёные из КЛАО и просто учёные думают, что они не враждебны. Ведь сотруднику агентства под именем  ███████.████████ дали революционный объект в плане здоровья для сотрудников, ОБЪЕКТ-10 RU — «Цветок из бумаги». В районах Турции, Казахстана,России, Айзербаржан, Узбекистан, Украина, Литва  находили знаки прибытия  людей из церкви семи углов
- 
+                        INVESTIGATE (Исследовать): Проводить тщательные исследования аномалии в любых условиях,даже когда это опасно учреждению.
 
+                        ц вф Сдерживать от народа аномалии и их физических либо ментальных сил.
 
+                        SAVE (Спасти): Максимально обеспечить выживание гражданского населения.
+                        <strong>Создание организации:</strong> Дата: 1917 год Место: Восточный фронт, район обороны Российской империи Во время артиллерийской перестрелки между армиями Российской и Венгерской империй вся российская боевая группа в указанной зоне исчезла. После отправки разведывательных групп обеих сторон не было обнаружено ни следов боя, ни тел, ни следов сражени. После октябрьской революции в 1920 Ленин подал указ на создания SIDS.В 1945 году Адская длань(американская компания по нахождению аномалий) и немецкая компания Abteilung XXV . Вы итоге SIDS смогла завладеть новыми силами(Первое название комитет аномалии(1920-1937)старое название ОРЗС(1937-1950))
+                            <hr>
+                        </div>
+                    </section>
 
+                    <nav class="scp-nav">
+                    <a href="/Organizations">← Назад к списку организации</a>
+                        <a href="/Organizations/Split_Will">
 
+                           Расколотая воля →
+                        </a>
+                    </nav>
 
-    <p class="section-title">
-        
-    
-    
-    <div class="nav-buttons">
-        <a href="/Organizations" class="back-button">← Назад к списку Организации</a>
-      
-        <a href="/Organizations/Split_Will" class="next-button">Расколотая воля →</a>
+                </main>
 
-    </div>
-</div>
+                <div class="scp-footer">© 2026 Организация SIDS — Все права засекречены.</div>
 
+            </body>
+        </html>

@@ -5,7 +5,7 @@ using SIDS.DataAccess.Models;
 
 namespace SIDS.DataAccess.DbContexts;
 
-public  class AppDbContext: DbContext
+public class AppDbContext : DbContext
 {
     public DbSet<Page> Pages { get; set; }
     public DbSet<Keyword> Keywords { get; set; }
@@ -33,7 +33,7 @@ public  class AppDbContext: DbContext
                 .IsRequired()
                 .HasMaxLength(500);
 
-            entity.Property(x => x.Content)
+            entity.Property(x => x.Description)
                 .HasColumnType("longtext");
 
             entity.HasMany(p => p.Keywords)
@@ -61,21 +61,21 @@ public  class AppDbContext: DbContext
                 Id = 1,
                 Title = "Главная",
                 Url = "/",
-                Content = "Добро пожаловать на сайт"
+                Description = "Добро пожаловать на сайт"
             },
             new Page
             {
                 Id = 2,
                 Title = "Объект-1 RU —«Предсказатель»",
                 Url = "Anomalies/1",
-                Content = "Сновидец"
+                Description = "Сновидец"
             },
             new Page
             {
                 Id = 3,
                 Title = "О нас",
                 Url = "Anomalies/2",
-                Content = "Информация о компании"
+                Description = "Информация о компании"
             }
         );
 
@@ -121,7 +121,7 @@ public  class AppDbContext: DbContext
             new Keyword { Id = 39, Word = "49" },
             new Keyword { Id = 40, Word = "gl" },
             new Keyword { Id = 41, Word = "67" },
-             new Keyword { Id =42, Word = "us" },
+             new Keyword { Id = 42, Word = "us" },
             new Keyword { Id = 43, Word = "100" },
             new Keyword { Id = 44, Word = "cn" },
             new Keyword { Id = 45, Word = "123" },
@@ -152,11 +152,11 @@ public  class AppDbContext: DbContext
             new Keyword { Id = 70, Word = "es" },
             new Keyword { Id = 71, Word = "2941" },
             new Keyword { Id = 72, Word = "4579" },
-            new Keyword { Id = 73, Word = "сейсмоактивность" }, 
-            new Keyword { Id = 74, Word = "меметический" },
+            new Keyword { Id = 73, Word = "сейсмоактивность" },
+            new Keyword { Id = 74, Word = "меметический" }
         );
 
- 
+
         modelBuilder.Entity("PageKeywords").HasData(
             new { PagesId = 1, KeywordsId = 1 },
             new { PagesId = 1, KeywordsId = 2 },
@@ -172,7 +172,7 @@ public  class AppDbContext: DbContext
             new { PagesId = 2, KeywordsId = 10 },
             new { PagesId = 2, KeywordsId = 73 },
             new { PagesId = 2, KeywordsId = 74 },
-      
+
 
             new { PagesId = 3, KeywordsId = 2 },
             new { PagesId = 3, KeywordsId = 1 },

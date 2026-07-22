@@ -1,62 +1,313 @@
 ﻿@{
     ViewData["Title"] = "Хаб сайта SIDS";
-  
 }
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Хаб сайта SIDS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <style>
+            /* ======================================================
+                               ПОЛНЫЙ СБРОС — перекрывает любые внешние стили страницы
+                               ====================================================== */
+            html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ul, li, table, tr, td, th, img, button {
+                all: revert;
+                box-sizing: border-box !important;
+            }
 
-<div class="main-content">
+            html {
+                background: #16181c !important;
+            }
 
-    <main>
-        <h2>Добро пожаловать в базу данных организации SIDS</h2>
-        <p>Выберите раздел из меню выше для просмотра информации об аномалиях, зонах, оперативных группах и других деталях.</p>
-        <p>ВНИМАНИЕ</p>
-        <p>При попытке взлома сайта  или рассекречивания инофрмации на данном сайте предназначена учесть в перевод к испытуемым или другие меры наказания по мере тяжести </p>
-    </main>
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                min-height: 100vh !important;
+                display: flex !important;
+                flex-direction: column !important;
+                font-family: "Segoe UI", Arial, sans-serif !important;
+                font-size: 16px !important;
+                background: #16181c !important;
+                color: #d6d6d6 !important;
+                line-height: 1.6 !important;
+            }
 
+            a {
+                text-decoration: none !important;
+                cursor: pointer !important;
+            }
 
-    <div class="main-anomaly">
+            * {
+                box-sizing: border-box;
+            }
 
-       
-        <div class="image-block2">
-            <img src="~/images/cartatttt3.png" alt="">   
-            <p style="text-align: center;"><strong> </strong><br>Карта размещения  учреждений SIDS </p>
+            /* ====== ШАПКА ====== */
+            .scp-header {
+                background: radial-gradient(circle at 50% -40%, #23262c 0%, #0c0d10 70%);
+                border-bottom: 1px solid #2a2d33;
+                padding: 28px 20px 18px;
+                text-align: center;
+                position: relative;
+                flex-shrink: 0;
+            }
 
+            .scp-account {
+                position: absolute;
+                top: 30px;
+                right: 24px;
+                font-size: 13px;
+                color: #8fa8ff;
+            }
+
+                .scp-account span {
+                    color: #6b6f78;
+                    margin: 0 6px;
+                }
+
+            .scp-logo-wrap {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .logo-link98 img {
+                height: 90px;
+            }
+
+            .scp-title {
+                font-size: clamp(28px, 6vw, 44px);
+                font-weight: 800;
+                letter-spacing: 1px;
+                color: #a9c1ff;
+                margin: 0;
+            }
+
+            .scp-subtitle {
+                font-size: 13px;
+                letter-spacing: 4px;
+                color: #e8e8e8;
+                font-weight: 700;
+                margin-top: 4px;
+            }
+
+            /* ====== НАВИГАЦИЯ ====== */
+            .scp-nav {
+                display: flex;
+                justify-content: center;
+                gap: 2px;
+                margin: 18px auto 0;
+                flex-wrap: wrap;
+                padding: 0 10px;
+                flex-shrink: 0;
+            }
+
+                .scp-nav a {
+                    display: inline-block;
+                    background: #1c1e24;
+                    border: 1px solid #34363d;
+                    color: #a9c1ff;
+                    font-weight: 700;
+                    font-size: clamp(11px, 2vw, 13px);
+                    padding: clamp(7px, 1.5vw, 9px) clamp(10px, 3vw, 18px);
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background .15s, color .15s;
+                }
+
+                    .scp-nav a:hover {
+                        background: #a9c1ff;
+                        color: #16181c;
+                    }
+
+            /* ====== КОНТЕЙНЕР СТРАНИЦ ====== */
+            main.page-main {
+                max-width: 900px;
+                margin: 28px auto 60px;
+                padding: 0 20px;
+                flex: 1 0 auto;
+                width: 100%;
+            }
+
+            h2.section-h {
+                text-align: center;
+                color: #ff5c5c;
+                font-size: 26px;
+                margin: 10px 0 20px;
+            }
+
+            h3.corps-h {
+                color: #a9c1ff;
+                font-size: 21px;
+                margin: 44px 0 16px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid #2a2d33;
+                clear: both;
+                text-align: center;
+            }
+
+            .article p {
+                margin: 0 0 18px;
+                font-size: 17px;
+            }
+
+            /* ====== УВЕДОМЛЕНИЕ ====== */
+            .notice-box {
+                border: 1px solid #8a0000;
+                background: #1a1414;
+                border-radius: 4px;
+                padding: 20px 26px;
+                text-align: left;
+                margin: 24px 0;
+            }
+
+                .notice-box h3 {
+                    color: #ff8a8a;
+                    letter-spacing: 2px;
+                    font-size: 17px;
+                    margin: 0 0 10px;
+                    text-align: center;
+                }
+
+                .notice-box p {
+                    color: #d6b7b7;
+                    font-size: 15.5px;
+                    margin: 0;
+                    text-align: left;
+                }
+
+            /* ====== КАРТИНКИ ====== */
+            .image-block2 {
+                margin: 24px 0;
+                text-align: center;
+            }
+
+                .image-block2 img {
+                    max-width: 100%;
+                    border: 3px solid #7c9cff;
+                    border-radius: 4px;
+                }
+
+                .image-block2 p {
+                    font-size: 13.5px;
+                    color: #9aa0ac;
+                    margin: 8px 0 0;
+                }
+
+            /* ====== ДВЕ КОЛОНКИ: СТАТЬИ / ИЗМЕНЕНИЯ ====== */
+            .container {
+                display: flex;
+                gap: 20px;
+                margin-top: 10px;
+                flex-wrap: wrap;
+            }
+
+            .column {
+                flex: 1 1 260px;
+                background: #101114;
+                border: 1px solid #2a2d33;
+                border-radius: 6px;
+                padding: 18px 20px;
+            }
+
+                .column h5 {
+                    color: #a9c1ff;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    margin: 0 0 12px;
+                    text-align: center;
+                    border-bottom: 1px solid #2a2d33;
+                    padding-bottom: 8px;
+                }
+
+                .column .content p {
+                    font-size: 15px;
+                    color: #c9ccd3;
+                    margin: 0 0 8px;
+                }
+
+            .divider {
+                width: 1px;
+                background: #2a2d33;
+                align-self: stretch;
+            }
+
+            /* ====== ФУТЕР ====== */
+            .scp-footer {
+                text-align: center;
+                padding: 22px;
+                font-size: 14px;
+                color: #6b6f78;
+                border-top: 1px solid #2a2d33;
+                background: #101114;
+                flex-shrink: 0;
+            }
+
+            @@media (max-width: 480px) {
+                .scp-account {
+                    display: none;
+                }
+
+                .container {
+                    flex-direction: column;
+                }
+
+                .divider {
+                    display: none;
+                }
+            }
+    </style>
+
+    <link rel="icon" type="image/x-icon" href="~/images/SIDS.png">
+</head>
+<body>
+
+    <header class="scp-header">
+        <div class="scp-account">DATA_LINK: ESTABLISHED | [ USER:Administrator ]</div>
+
+        <div class="scp-logo-wrap">
+            <a href="/" class="logo-link98">
+                <img src="~/images/SIDS98.png" alt="SIDS Logo">
+            </a>
+            <h1 class="scp-title">SIDS Organization</h1>
+            <div class="scp-subtitle">SECURE &nbsp;·&nbsp; INVESTIGATE &nbsp;·&nbsp; DELAY &nbsp;·&nbsp; SAVE</div>
         </div>
-         
-            
-        <main>
-        <h2>Нововедения</h2>
-        </main>
 
-        <!DOCTYPE html>
-        <html lang="ru">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Статьи и Изменения сайта</title>
-            <style>
-  
-            
-              
-            </style>
-        </head>
-        <body>
+        <nav class="scp-nav">
+            <a href="/Anomalies">Аномалии</a>
+            <a href="/AddInfo">Доп.инфа</a>
+            <a href="/Organizations">Организации</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <div class="article">
+
+            <h2 class="section-h">Добро пожаловать в базу данных организации SIDS</h2>
+            <p>Выберите раздел из меню выше для просмотра информации об аномалиях, зонах, оперативных группах и других деталях.</p>
+
+            <div class="notice-box">
+                <h3>ВНИМАНИЕ</h3>
+                <p>При попытке взлома сайта или рассекречивания информации на данном сайте предусмотрен перевод в статус испытуемого или иные меры наказания в зависимости от тяжести нарушения.</p>
+            </div>
+
+            <div class="image-block2">
+                <img src="~/images/cartatttt3.png" alt="Карта размещения учреждений SIDS">
+                <p><strong>Карта размещения учреждений SIDS</strong></p>
+            </div>
+
+            <h3 class="corps-h">Нововведения</h3>
 
             <div class="container">
                 <div class="column">
                     <h5>Статьи</h5>
                     <div class="content">
-                   
-
-                            <p>
-                               Немного улучшен Объект-49 FR
-                            </p>
-
-                            <p>
-                               Добавлено,но не до конца классы опосности 
-                            </p>
-
-                 
+                        <p>Всё сделано.</p>
                     </div>
                 </div>
 
@@ -65,23 +316,15 @@
                 <div class="column">
                     <h5>Изменения сайта</h5>
                     <div class="content">
-                      
-
-                        <p>
-                            Добавлен новый стиль для объектов в зоне-222
-                        </p>
-
-                 
-
+                        <p>Всё сделано.</p>
                     </div>
                 </div>
             </div>
 
-        </body>
-    </html>
+        </div>
+    </main>
 
+    <div class="scp-footer">© 2026 Организация SIDS — Все права засекречены.</div>
 
-    </div>
-</div>
-
-
+</body>
+</html>
