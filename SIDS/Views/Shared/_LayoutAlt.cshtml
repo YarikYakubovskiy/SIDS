@@ -1,1 +1,52 @@
 ﻿        @RenderBody()
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/css/main.css?v=63">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="~/images/SIDS.png">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-link">
+                <img src="~/images/SIDS9292929292.png" alt="SIDS Logo">
+            </a>
+
+            <div class="titles">
+                <h1>SECURE • INVESTIGATE • DELAY • SAVE</h1>
+                <h2>Мы видим то, что вам не суждено</h2>
+                <p>— Джордж Смилерс, гл. КЛАО</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/Anomalies">Аномалии</a>
+
+            <a href="/AddInfo">Доп. инфа</a>
+            <a href="/Technologies">Технологии</a>
+            <a href="/Organizations">Организации</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        © 2025 Организация SIDS
+    </footer>
+
+</body>
+</html>

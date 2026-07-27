@@ -1,6 +1,25 @@
 ﻿@{
 Layout = null;
 }
+
+<style>
+
+    .image-block {
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 20px;
+        padding: 0;
+        max-width: 300px;
+    }
+
+        .image-block img {
+            width: 100%;
+            border: 3px solid #000;
+        }
+
+</style>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -17,6 +36,8 @@ Layout = null;
             <div class="SIDS-header-inner">
                 <a href="/" class="logo-link">
                     <img src="~/images/ZONE1112.png" alt="SIDS Logo" style="width:150px; height:auto;">
+                    
+
                 </a>
 
                 <div class="SIDS-titles">
@@ -40,6 +61,11 @@ Layout = null;
         <main class="SIDS-main-content">
             <h1>Объект-234 UK - «Британская рептилия»</h1>
             <p><strong>Класс объекта:</strong> <span style="color:#b30000">СМЕРТЕЛЬНООПАСНО</span></p>
+            <div class="image-block">
+                <img src="~/images/234.png" alt="Объект-234 UK">
+                <p style="text-align: center;"><strong>Объект-234 UK  </strong><br>  Объект-234 UK у берега </p>
+
+            </div>
 
             <div class="SIDS-document">
                 Документ содержит информацию, доступную только персоналу с уровнем допуска 4 и выше.
